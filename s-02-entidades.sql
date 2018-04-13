@@ -1,8 +1,10 @@
+
 CREATE TABLE precio(
 precio_id NUMERIC(10,0) NOT NULL,
 monto NUMERIC(8,3) NOT NULL,
 fecha_inicio DATE NOT NULL,
 fecha_final DATE NOT NULL,
+dias_vigencia NUMBER GENERATED ALWAYS AS(fecha_final-fecha_inicial) VIRTUAL,
 CONSTRAINT precio_id_pk PRIMARY KEY(precio_id)		
 );
 
